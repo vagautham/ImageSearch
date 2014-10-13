@@ -50,6 +50,8 @@
 //Google Search API to fetch image and store it in a list
 - (void)getGoogleImagesForQuery:(NSString*)query withPage:(int)page
 {
+    query = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
     /*
      The image count during search is limited to 60 images
      since a custom URL is used to do the operations.
